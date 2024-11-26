@@ -94,15 +94,15 @@
 
 # Lista
 
-frutta = ["mela", "banana", "uva"]
-if "mela" in frutta:
-    print("La mela è nella lista della frutta")
-else:
-    print("La mela è finita")
+# frutta = ["mela", "banana", "uva"]
+# if "mela" in frutta:
+#     print("La mela è nella lista della frutta")
+# else:
+#     print("La mela è finita")
 
 
 
 # FOR
 
-for i in range (5,10):
-    print(i)
+# for i in range (5,10):
+#     print(i)
