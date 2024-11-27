@@ -111,7 +111,9 @@
 
 # Funzione
 
-def ciao():
-    print("Hello from a function")
-ciao()
-ciao()
+def saluto(nome):
+    print("Ciao " +nome + "!")
+
+print("inserisci nome: ")
+nomeinput = input()
+saluto(nomeinput)
