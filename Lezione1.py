@@ -106,3 +106,12 @@
 
 # for i in range (5,10):
 #     print(i)
+
+
+
+# Funzione
+
+def ciao():
+    print("Hello from a function")
+ciao()
+ciao()
