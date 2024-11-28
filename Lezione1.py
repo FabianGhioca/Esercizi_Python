@@ -111,9 +111,38 @@
 
 # Funzione
 
-def saluto(nome):
-    print("Ciao " +nome + "!")
+# def saluto(nome):
+#     print("Ciao " +nome + "!")
 
-print("inserisci nome: ")
-nomeinput = input()
-saluto(nomeinput)
+# print("inserisci nome: ")
+# nomeinput = input()
+# saluto(nomeinput)
+
+
+
+# Classi
+
+# class Uomo:
+#     specie = "Homo sapiens"
+
+#     def __init__(self, nome, eta):
+#         self.nome = nome
+#         self.eta = eta
+
+# uomo1 = Uomo("Fabian", 20)
+# print(uomo1.specie)
+# print(uomo1.nome)
+# print(uomo1.eta)
+
+class Persona:
+    def saluta(self):
+        print ("Ciao!")
+
+class Studente(Persona):
+    def saluta(self):
+        print("Ciao, sono uno studente!")
+
+persona1 = Persona()
+studente1 = Studente()
+persona1.saluta()
+studente1.saluta()
