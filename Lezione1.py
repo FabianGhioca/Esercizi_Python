@@ -134,15 +134,23 @@
 # print(uomo1.nome)
 # print(uomo1.eta)
 
-class Persona:
-    def saluta(self):
-        print ("Ciao!")
+# class Persona:
+#     def saluta(self):
+#         print ("Ciao!")
 
-class Studente(Persona):
-    def saluta(self):
-        print("Ciao, sono uno studente!")
+# class Studente(Persona):
+#     def saluta(self):
+#         print("Ciao, sono uno studente!")
 
-persona1 = Persona()
-studente1 = Studente()
-persona1.saluta()
-studente1.saluta()
+# persona1 = Persona()
+# studente1 = Studente()
+# persona1.saluta()
+# studente1.saluta()
+
+
+
+# Librerie e comando PIP
+
+pip installnemeLib
+
+pip install -r requirements.txt

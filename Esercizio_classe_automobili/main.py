@@ -16,10 +16,10 @@ while True:
         velocita = int(input("inserisci la velocita da aumentare: "))
         a.AumentoVelocita(velocita)
 
-    # elif scelta == 3:
+    elif scelta == 3:
+        velocita = int(input("inserisci la velocita da diminuire: "))
+        a.DiminuzzioneVelocita(velocita)
 
-
-
-    # elif scelta == 4:
-    #     print("Il veicolo si è fermato in sicurezza e si è chiuso il programma!")
-    #     break
+    elif scelta == 4:
+        a.FineProgramma()
+        break
