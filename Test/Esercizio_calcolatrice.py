@@ -1,79 +1,65 @@
 import tkinter as tk
 
-# Creazione della finestra
-window = tk.Tk()
-window.title("Calcolatrice")
-window.geometry("600x600")
-window.resizable(False, False)
-window.configure(background="black")
+# Funzione per eseguire il calcolo 
+def calcola(operazione):
+    try:
+        
+        num1 = float(entry1.get())
+        num2 = float(entry2.get())
 
-# Input primo valore
-input_text = tk.Entry(window)
-input_text.grid(row=0, column=0, sticky="W")
+        
+        if operazione == 'somma':
+            risultato = num1 + num2
+        elif operazione == 'sottrazione':
+            risultato = num1 - num2
+        elif operazione == 'moltiplicazione':
+            risultato = num1 * num2
+        elif operazione == 'divisione':
+            if num2 != 0:
+                risultato = num1 / num2
+            else:
+                risultato = "Errore: divisione per zero"
+        else:
+            risultato = "Operazione non riconosciuta"
 
-# Input secondo valore 
-input_text2 = tk.Entry(window)
-input_text2.grid(row=2, column=0, sticky="W")
+        # Mostra il risultato
+        label_risultato.config(text=f"Risultato: {risultato}")
+    except ValueError:
+        label_risultato.config(text="Errore: inserisci numeri validi")
 
-# Cronologia
-cronologia = tk.Label(window, text="Cronologia", fg="#ff0000", font=("Helvetica", 16))
-cronologia.grid(row=4, sticky="W", pady=5)
+# Creazione della finestra principale
+root = tk.Tk()
+root.title("Calcolatrice Semplice")
 
-# Operazione della moltiplicazione
-def Operazione_Moltiplicazione():
-    int_input_text = int(input_text.get())
-    int_input_text2 = int(input_text2.get())
-    risultato = int_input_text * int_input_text2
-    output_risultato = tk.Label(window, text=risultato, fg="#ff0000", font=("Helvetica", 16))
-    output_risultato.grid(sticky="W", padx=10, pady=10)
+# Creazione dei widget
+label1 = tk.Label(root, text="Inserisci il primo numero:")
+label1.pack()
 
-# Operazione della divisione
-def Operazione_Divisione():
-    int_input_text = int(input_text.get())
-    int_input_text2 = int(input_text2.get())
-    if int_input_text >= int_input_text2:
-        risultato = int_input_text / int_input_text2
-        output_risultato = tk.Label(window, text=risultato, fg="#ff0000", font=("Helvetica", 16))
-        output_risultato.grid(sticky="W", padx=10, pady=10)
-    else:
-        testo = "I valori emmessi non sono validi"
-        output_errore = tk.Label(window, text=testo, fg="#ff0000", font=("Helvetica", 16))
-        output_errore.grid(sticky="W", padx=10, pady=10)
+entry1 = tk.Entry(root)
+entry1.pack()
 
-# Operazione della sottrazione
-def Operazione_Sottrazione():
-    int_input_text = int(input_text.get())
-    int_input_text2 = int(input_text2.get())
-    if int_input_text >= int_input_text2:
-        risultato = int_input_text - int_input_text2
-        output_risultato = tk.Label(window, text=risultato, fg="#ff0000", font=("Helvetica", 16))
-        output_risultato.grid(sticky="W", padx=10, pady=10)
-    else:
-        testo = "I valori emmessi non sono validi"
-        output_errore = tk.Label(window, text=testo, fg="#ff0000", font=("Helvetica", 16))
-        output_errore.grid(sticky="W", padx=10, pady=10)
+label2 = tk.Label(root, text="Inserisci il secondo numero:")
+label2.pack()
 
-# Operazione addizione
-def Operazione_Addizione():
-    int_input_text = int(input_text.get())
-    int_input_text2 = int(input_text2.get())
-    risultato = int_input_text + int_input_text2
-    output_risultato = tk.Label(window, text=risultato, fg="#ff0000", font=("Helvetica", 16))
-    output_risultato.grid(sticky="W", padx=10, pady=10)
+entry2 = tk.Entry(root)
+entry2.pack()
 
-# Bottoni per fare le operazioni
-moltiplicazione = tk.Button(text="*", command = Operazione_Moltiplicazione)
-moltiplicazione.grid(row=1, sticky="W", padx=5, pady=10)
+# Etichetta per visualizzare il risultato
+label_risultato = tk.Label(root, text="Risultato: ")
+label_risultato.pack()
 
-divisione = tk.Button(text="/", command = Operazione_Divisione)
-divisione.grid(row=1, sticky="W", padx=30, pady=10)
+# Bottoni per le operazioni
+button_somma = tk.Button(root, text="Somma", command=lambda: calcola('somma'))
+button_somma.pack()
 
-addizione = tk.Button(text="+", command= Operazione_Addizione)
-addizione.grid(row=1, sticky="W", padx=55, pady=10)
+button_sottrazione = tk.Button(root, text="Sottrazione", command=lambda: calcola('sottrazione'))
+button_sottrazione.pack()
 
-sottrazione = tk.Button(text="-", command= Operazione_Sottrazione)
-sottrazione.grid(row=1, sticky="W", padx=80, pady=10)
+button_moltiplicazione = tk.Button(root, text="Moltiplicazione", command=lambda: calcola('moltiplicazione'))
+button_moltiplicazione.pack()
 
+button_divisione = tk.Button(root, text="Divisione", command=lambda: calcola('divisione'))
+button_divisione.pack()
 
-if __name__=="__main__":
-    window.mainloop()
+# Avvio dell'interfaccia grafica
+root.mainloop()
