@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../C-sharp"
-		},
-		{
-			"path": "../C"
 		}
 	],
 	"settings": {}
